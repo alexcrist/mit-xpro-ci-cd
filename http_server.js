@@ -46,8 +46,9 @@ app.post('/add', function(req, res){
     res.send(db.get('users').value());
 });
 
-const server = app.listen(3000, function(){
-    console.log('Running on port 3000!')
+const port = process.env.PORT || 3000;
+const server = app.listen(port, function(){
+    console.log(`Running on port ${port}!`)
 });
 
 module.exports = { app, server };
